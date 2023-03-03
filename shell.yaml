@@ -7,5 +7,5 @@ spec:
   containers:
     - name: shell
       image: tensouth/shell:latest
-      imagePullPolicy: IfNotPresent
+      imagePullPolicy: Always
   restartPolicy: Always
