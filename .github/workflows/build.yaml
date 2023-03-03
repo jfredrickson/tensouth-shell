@@ -1,9 +1,14 @@
-name: ci
+# Rebuild whenever the Dockerfile changes
+
+name: Build
 
 on:
   push:
     branches:
       - main
+    paths:
+      - Dockerfile
+      - .github/workflows/build.yaml
 
 jobs:
   build:
@@ -30,10 +35,3 @@ jobs:
           push: true
           tags: tensouth/shell:latest
           platforms: linux/amd64,linux/arm64
-
-      - name: Update Docker Hub description
-        uses: peter-evans/dockerhub-description@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: tensouth/shell
