@@ -31,3 +31,9 @@ jobs:
           tags: tensouth/shell:latest
           platforms: linux/amd64,linux/arm64
 
+      - name: Update Docker Hub description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: tensouth/shell
