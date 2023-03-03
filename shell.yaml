@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell
+  namespace: default
+spec:
+  containers:
+    - name: shell
+      image: tensouth/shell:latest
+      command:
+        - sleep
+        - infinity
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
