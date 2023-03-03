@@ -5,7 +5,6 @@ RUN apt-get update && apt-get install -y \
   dnsutils \
   iputils-ping \
   mariadb-client \
-  mysql-client \
   netcat \
   postgresql-client \
   redis \
